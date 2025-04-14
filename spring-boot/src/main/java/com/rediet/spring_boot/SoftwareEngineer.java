@@ -1,8 +1,17 @@
 package com.rediet.spring_boot;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
 import java.util.Objects;
 
+@Entity
 public class SoftwareEngineer {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
     private String techStack;
@@ -50,5 +59,8 @@ public class SoftwareEngineer {
     @Override
     public int hashCode() {
         return Objects.hash(id, name, techStack);
+    }
+
+    public void insertSoftwareEngineer(SoftwareEngineer softwareEngineer) {
     }
 }
